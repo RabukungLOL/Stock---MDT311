@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>รายการสินค้า | ระบบสต็อกสินค้า</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <main>
+    <div class="page-head">
+      <h1>รายการสินค้า</h1>
+      <a href="product-form.html" class="btn btn-primary">+ เพิ่มสินค้า</a>
+    </div>
+
+    <div id="alert-box"></div>
+
+    <section class="stats">
+      <div class="stat"><div class="stat-label">สินค้าทั้งหมด</div><div class="stat-value" id="stat-total">–</div></div>
+      <div class="stat"><div class="stat-label">ใกล้หมด / หมด</div><div class="stat-value warn" id="stat-low">–</div></div>
+      <div class="stat"><div class="stat-label">มูลค่าสต็อกรวม (บาท)</div><div class="stat-value" id="stat-value">–</div></div>
+    </section>
+
+    <div class="filters">
+      <input type="search" id="search" placeholder="ค้นหาชื่อหรือรหัสสินค้า" aria-label="ค้นหาสินค้า">
+      <select id="category-filter" aria-label="กรองตามหมวดหมู่">
+        <option value="">ทุกหมวดหมู่</option>
+      </select>
+      <label class="check"><input type="checkbox" id="low-only"> เฉพาะใกล้หมด</label>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>รหัส</th>
+            <th>ชื่อสินค้า</th>
+            <th>หมวดหมู่</th>
+            <th class="num">ราคา</th>
+            <th class="num">คงเหลือ</th>
+            <th class="num">จุดสั่งซื้อ</th>
+            <th>สถานะ</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="product-rows">
+          <tr><td colspan="8" class="empty">กำลังโหลด…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

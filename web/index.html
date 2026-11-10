@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เข้าสู่ระบบ | ระบบสต็อกสินค้า</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="login-page">
+    <div class="card login-card">
+      <div class="brand"><span class="brand-mark">S</span>ระบบสต็อกสินค้า</div>
+      <p class="muted">เข้าสู่ระบบเพื่อจัดการสินค้าในคลัง</p>
+
+      <div id="alert-box"></div>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="email">อีเมล</label>
+          <input type="email" id="email" autocomplete="username" placeholder="staff@example.com" required>
+        </div>
+        <div class="field">
+          <label for="password">รหัสผ่าน</label>
+          <input type="password" id="password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="login-btn">เข้าสู่ระบบ</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

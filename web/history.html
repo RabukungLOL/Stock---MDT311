@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ประวัติรับเข้า / เบิกออก | ระบบสต็อกสินค้า</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <main>
+    <div class="page-head">
+      <h1>ประวัติรับเข้า / เบิกออก</h1>
+    </div>
+
+    <div id="alert-box"></div>
+
+    <div class="filters">
+      <select id="product-filter" aria-label="กรองตามสินค้า">
+        <option value="">ทุกสินค้า</option>
+      </select>
+      <select id="type-filter" aria-label="กรองตามประเภท">
+        <option value="">ทุกประเภท</option>
+        <option value="IN">รับเข้า</option>
+        <option value="OUT">เบิกออก</option>
+      </select>
+      <span class="muted" id="row-count"></span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>วันเวลา</th>
+            <th>รหัส</th>
+            <th>สินค้า</th>
+            <th>ประเภท</th>
+            <th class="num">จำนวน</th>
+            <th>หมายเหตุ</th>
+            <th>ผู้บันทึก</th>
+          </tr>
+        </thead>
+        <tbody id="history-rows">
+          <tr><td colspan="7" class="empty">กำลังโหลด…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/history.js"></script>
+</body>
+</html>

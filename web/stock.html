@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>รับเข้า / เบิกออก | ระบบสต็อกสินค้า</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <main>
+    <div class="page-head">
+      <h1>รับเข้า / เบิกออก</h1>
+    </div>
+
+    <div id="alert-box"></div>
+
+    <div class="two-col">
+      <form id="stock-form" class="card" novalidate>
+        <div class="field" style="margin-bottom:16px">
+          <label for="product_id">สินค้า <span class="required">*</span></label>
+          <select id="product_id">
+            <option value="">เลือกสินค้า</option>
+          </select>
+          <div class="error" data-error-for="product_id"></div>
+        </div>
+
+        <div class="field" style="margin-bottom:16px">
+          <label>ประเภทรายการ</label>
+          <div class="segmented">
+            <label><input type="radio" name="type" value="IN" checked><span>รับเข้า (IN)</span></label>
+            <label><input type="radio" name="type" value="OUT"><span>เบิกออก (OUT)</span></label>
+          </div>
+        </div>
+
+        <div class="field" style="margin-bottom:16px">
+          <label for="quantity">จำนวน <span class="required">*</span></label>
+          <input type="number" id="quantity" min="1" step="1" placeholder="0">
+          <div class="error" data-error-for="quantity"></div>
+        </div>
+
+        <div class="field">
+          <label for="note">หมายเหตุ</label>
+          <input type="text" id="note" maxlength="200" placeholder="รับจากซัพพลายเออร์ / ขายหน้าร้าน">
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submit-btn">บันทึกรายการ</button>
+        </div>
+      </form>
+
+      <aside class="card">
+        <h2>ยอดคงเหลือ</h2>
+        <div id="stock-panel" class="muted">เลือกสินค้าเพื่อดูยอดคงเหลือ</div>
+        <h2 style="margin-top:22px">รายการล่าสุดของสินค้านี้</h2>
+        <ul class="mini-list" id="recent-list"><li class="muted">–</li></ul>
+      </aside>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/stock.js"></script>
+</body>
+</html>
